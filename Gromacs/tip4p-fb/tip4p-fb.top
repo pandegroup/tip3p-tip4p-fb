@@ -1,0 +1,8 @@
+#include "tip4p-fb.itp"
+
+[ system ]
+512 water molecules
+
+[ molecules ]
+SOL 512
+

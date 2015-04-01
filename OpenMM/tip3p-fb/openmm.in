@@ -1,0 +1,22 @@
+integrator                         langevin # (str)    Molecular dynamics integrator. Allowed values are ['verlet', 'langevin', 'velocity-verlet', 'mtsvvvr']
+minimize                               True # (bool)   Specify whether to minimize the energy before running dynamics.
+timestep                                2.0 # (float)  Time step in femtoseconds.
+restart_filename                  restart.p # (str)    Restart information will be read from / written to this file (will be backed up).
+restart_interval                        500 # (int)    Specify a timestep interval for writing the restart file.
+equilibrate                           50000 # (int)    Number of steps reserved for equilibration.
+production                          5000000 # (int)    Number of steps in production run.
+report_interval                         500 # (int)    Number of steps between every progress report.
+temperature                          298.15 # (float)  Simulation temperature for Langevin integrator or Andersen thermostat.
+gentemp                              298.15 # (float)  Specify temperature for generating velocities.
+pressure                                1.0 # (float)  Simulation pressure; set a positive number to activate.
+nonbonded_method                        PME # (str)    Set the method for nonbonded interactions. Allowed values are ['NoCutoff', 'CutoffNonPeriodic', 'CutoffPeriodic', 'Ewald', 'PME']
+nonbonded_cutoff                        0.9 # (float)  Nonbonded cutoff distance in nanometers.
+vdw_switch                             True # (bool)   Use a multiplicative switching function to ensure twice-differentiable vdW energies near the cutoff distance.
+switch_distance                         0.7 # (float)  Set the distance where the switching function starts; must be less than the nonbonded cutoff.
+dispersion_correction                  True # (bool)   Isotropic long-range dispersion correction for periodic systems.
+ewald_error_tolerance                  1e-4 # (float)  Error tolerance for Ewald and PME methods.  Don't go below 5e-5 for PME unless running in double precision.
+platform                               CUDA # (str)    The simulation platform. Allowed values are ['Reference', 'CUDA', 'OpenCL']
+cuda_precision                        mixed # (str)    The precision of the CUDA platform. Allowed values are ['single', 'mixed', 'double']
+constraints                          HBonds # (str)    Specify constraints. Allowed values are [None, 'HBonds', 'AllBonds', 'HAngles']
+rigidwater                             True # (bool)   Add constraints to make water molecules rigid.
+dcd_report_interval                     500 # (int)    Specify a timestep interval for DCD reporter.
